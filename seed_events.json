@@ -1,0 +1,574 @@
+[
+  {
+    "event_id": "EV-895-010",
+    "type": "personnel_change",
+    "date": "895-06-15",
+    "location": "capital",
+    "actors": ["varen_tholl"],
+    "parent": null,
+    "depth": 0,
+    "details": {
+      "change_type": "birth",
+      "note": "Born in the Capital the year Linn discovers Curry-Howard (EV-895-007)"
+    },
+    "triggers_cascade": false,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Varen Tholl is born in Year 895, the same year Sereth Linn discovers the Curry-Howard correspondence. He will grow up during the golden age of dependent types, studying under Linn herself."
+  },
+  {
+    "event_id": "EV-920-030",
+    "type": "personnel_change",
+    "date": "920-09-01",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-920-021",
+    "depth": 0,
+    "details": {
+      "change_type": "appointment",
+      "role": "junior_archivist",
+      "institution": "capital_archives",
+      "department": "classification_theory",
+      "age_at_appointment": 25,
+      "mentor": "sereth_linn"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Varen Tholl joins the Archives at age 25, the same year Linn publishes her final synthesis (EV-920-021). He arrives in time to study under Linn before her retirement in 923."
+  },
+  {
+    "event_id": "EV-925-015",
+    "type": "anomaly_observed",
+    "date": "925-03-20",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-923-003",
+    "depth": 0,
+    "details": {
+      "phenomenon": "type_computation_divergence",
+      "observation": "Some type-level computations appear not to terminate",
+      "context": "While implementing Linn's Calculus of Inductive Constructions",
+      "example": "A recursive type family that unfolds forever",
+      "implication": "If types don't normalize, type-checking doesn't terminate"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Two years after Linn's retirement, Tholl observes that type-level computation in the CIC can diverge if not carefully constrained. This threatens the whole system: type-checking must terminate, or the type system is unusable."
+  },
+  {
+    "event_id": "EV-928-010",
+    "type": "investigation_launched",
+    "date": "928-06-01",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-928-004",
+    "depth": 0,
+    "details": {
+      "investigation_type": "normalization_study",
+      "target": "calculus_of_inductive_constructions",
+      "motivation": "Linn's system must normalize if it is to serve as a foundation for mathematics",
+      "scope": "All well-typed terms must reduce to normal form"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Shortly after Linn's death, Tholl launches a systematic investigation of normalization for dependent types. He takes up the mantle of proving that her system is logically sound."
+  },
+  {
+    "event_id": "EV-930-005",
+    "type": "discovery",
+    "date": "930-02-15",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-928-010",
+    "depth": 0,
+    "details": {
+      "discovery_type": "strong_vs_weak_normalization",
+      "observation": "Strong normalization (all paths terminate) vs. weak normalization (some path terminates)",
+      "key_insight": "Strong normalization implies confluence but not vice versa",
+      "example": "A term where one reduction path terminates but another loops forever",
+      "implication": "We must prove ALL reduction paths terminate"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl distinguishes strong from weak normalization. Strong normalization is harder to prove but stronger: no matter how you reduce, you eventually reach a value. This is what Linn's system needs."
+  },
+  {
+    "event_id": "EV-932-003",
+    "type": "discovery",
+    "date": "932-08-01",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-930-005",
+    "depth": 0,
+    "details": {
+      "discovery_type": "confluence_property",
+      "theorem_name": "church_rosser",
+      "claim": "If M reduces to N1 and M reduces to N2, there exists N3 such that N1 and N2 both reduce to N3",
+      "significance": "Different reduction orders reach the same result",
+      "proof_technique": "Diamond lemma"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl proves confluence for the CIC. No matter which redex you choose to reduce, you can always reach the same normal form. This is crucial: it means evaluation order doesn't affect the result."
+  },
+  {
+    "event_id": "EV-935-005",
+    "type": "discovery",
+    "date": "935-04-10",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-932-003",
+    "depth": 0,
+    "details": {
+      "discovery_type": "reduction_strategies",
+      "strategies_identified": ["call_by_name", "call_by_value", "lazy_evaluation"],
+      "call_by_name": "Reduce outermost redex first (leftmost-outermost)",
+      "call_by_value": "Reduce arguments before function body",
+      "lazy": "Reduce only when value is needed",
+      "key_insight": "Under strong normalization, all strategies terminate"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl catalogs reduction strategies. In an untyped system, call-by-name and call-by-value can give different termination behavior. But under strong normalization, all strategies reach the same normal form."
+  },
+  {
+    "event_id": "EV-938-002",
+    "type": "manuscript_written",
+    "date": "938-06-01",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-935-005",
+    "depth": 0,
+    "details": {
+      "title": "On Confluence and Reduction Order",
+      "pages": 124,
+      "chapters": 7,
+      "key_claim": "The Church-Rosser property ensures evaluation strategies are interchangeable",
+      "dedication": "To Sereth Linn, whose types I prove sound",
+      "archive_catalog": "THL-001"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl's first major manuscript. Establishes confluence and studies reduction strategies. The dedication to Linn positions him as her intellectual heir on the question of type soundness."
+  },
+  {
+    "event_id": "EV-940-003",
+    "type": "theory_contested",
+    "date": "940-03-15",
+    "location": "capital_archives",
+    "actors": ["corvin_gast", "varen_tholl"],
+    "parent": "EV-938-002",
+    "depth": 0,
+    "details": {
+      "contested_theory": "strong_normalization",
+      "objection_title": "On the Impossibility of Proving Normalization",
+      "key_objection": "Normalization cannot be proved within the system it normalizes",
+      "goedel_reference": "Like incompleteness, consistency cannot be self-proved",
+      "supporters": 6
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Corvin Gast (fourth generation of the Gast family of critics) objects that Tholl's project is impossible. By Goedel-like reasoning, a system cannot prove its own consistency. How can we trust normalization proved in a metatheory?"
+  },
+  {
+    "event_id": "EV-942-004",
+    "type": "debate_published",
+    "date": "942-09-20",
+    "location": "capital_archives",
+    "actors": ["varen_tholl", "corvin_gast"],
+    "parent": "EV-940-003",
+    "depth": 0,
+    "details": {
+      "title": "Trust and Metatheory: The Normalization Debate",
+      "forum": "capital_philosophical_society",
+      "tholl_position": "We prove normalization in a stronger metatheory; the trust chain is explicit",
+      "gast_position": "All such proofs beg the question; we must assume what we prove",
+      "outcome": "productive_disagreement",
+      "audience_reception": "thoughtful_division"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "The central debate of normalization theory. Tholl argues the metatheory is weaker than it seems (just set theory). Gast argues this just pushes the problem back. The debate clarifies what 'foundation' means."
+  },
+  {
+    "event_id": "EV-945-005",
+    "type": "discovery",
+    "date": "945-07-15",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-942-004",
+    "depth": 0,
+    "details": {
+      "discovery_type": "reducibility_candidates",
+      "technique_name": "logical_relations",
+      "description": "Define a logical predicate on types inductively; prove all well-typed terms satisfy it",
+      "key_insight": "The predicate is defined by recursion on type structure, not term structure",
+      "origin": "Inspired by Brennis's original normalization proof"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl develops the reducibility method (logical relations). The key insight: define 'reducible' inductively on types, then show all terms are reducible. This generalizes Brennis's technique to dependent types."
+  },
+  {
+    "event_id": "EV-948-003",
+    "type": "discovery",
+    "date": "948-11-01",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-945-005",
+    "depth": 0,
+    "details": {
+      "discovery_type": "inductive_normalization",
+      "observation": "Inductive types require positivity to normalize",
+      "problem": "Negative occurrences of the type being defined can encode non-termination",
+      "solution": "Strict positivity condition on inductive definitions",
+      "example": "Type T = T -> Nat is rejected; Type T = Nat -> T is allowed"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl discovers that inductive types must satisfy a positivity condition. Without it, we can encode Omega in the type system: T = T -> Nat lets us build self-applying functions. Positivity prevents this."
+  },
+  {
+    "event_id": "EV-950-002",
+    "type": "discovery",
+    "date": "950-03-20",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-948-003",
+    "depth": 0,
+    "details": {
+      "discovery_type": "universe_normalization",
+      "observation": "Universe levels must be predicative for normalization",
+      "problem": "Type : Type allows encoding of paradoxes",
+      "solution": "Stratified universes Type_0 : Type_1 : Type_2 : ...",
+      "connection_to_linn": "Confirms Linn's universe hierarchy is essential, not optional"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl proves that universe stratification is required for normalization. If Type : Type, we can encode Russell's paradox. Linn's universe hierarchy isn't just elegant; it's necessary for consistency."
+  },
+  {
+    "event_id": "EV-952-004",
+    "type": "discovery",
+    "date": "952-08-15",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-950-002",
+    "depth": 0,
+    "details": {
+      "discovery_type": "consistency_from_normalization",
+      "theorem": "If a type system is strongly normalizing, it is logically consistent",
+      "proof": "Non-termination encodes false; if all terms terminate, false has no proof",
+      "implication": "Normalization is the key to logical foundations",
+      "connection_to_curry_howard": "No proof of False means the logic is sound"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl's central insight: normalization implies consistency. Under Curry-Howard, a program of type False is a proof of falsity. If all programs terminate, and there's no closed term of type False, then False has no proof."
+  },
+  {
+    "event_id": "EV-955-003",
+    "type": "manuscript_written",
+    "date": "955-05-01",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-952-004",
+    "depth": 0,
+    "details": {
+      "title": "On the Strong Normalization of the Calculus of Inductive Constructions",
+      "pages": 312,
+      "chapters": 18,
+      "contents": [
+        "Confluence",
+        "Reduction strategies",
+        "Reducibility candidates",
+        "Positivity conditions",
+        "Universe stratification",
+        "The normalization theorem",
+        "Logical consistency"
+      ],
+      "archive_catalog": "THL-002"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl's magnum opus. The complete normalization proof for Linn's CIC. Establishes that the dependent type system is logically consistent — no proof of False exists."
+  },
+  {
+    "event_id": "EV-958-002",
+    "type": "personnel_change",
+    "date": "958-01-01",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-955-003",
+    "depth": 0,
+    "details": {
+      "change_type": "promotion",
+      "from_position": "senior_archivist",
+      "to_position": "director_of_proof_theory",
+      "institution": "capital_archives",
+      "recognition": "For proving the consistency of the Calculus of Inductive Constructions"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "At age 63, Tholl is appointed Director of Proof Theory — a new position recognizing the importance of his work. Normalization is no longer just a technical property; it's the foundation of logical trust."
+  },
+  {
+    "event_id": "EV-960-004",
+    "type": "discovery",
+    "date": "960-09-10",
+    "location": "capital_archives",
+    "actors": ["varen_tholl", "dora_keth"],
+    "parent": "EV-958-002",
+    "depth": 0,
+    "details": {
+      "discovery_type": "intellectual_correspondence",
+      "description": "Beginning of Tholl-Keth correspondence on identity types",
+      "keth_question": "Does normalization preserve equality? Can two proofs of the same proposition normalize to different normal forms?",
+      "tholl_response": "Normal forms are unique up to alpha-equivalence, but identity proofs may differ",
+      "significance": "Seeds the question of propositional vs. definitional equality"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl begins correspondence with Dora Keth, who is developing her ideas about identity types. Keth's question — can different proofs of equality be 'equal'? — will lead to homotopy type theory."
+  },
+  {
+    "event_id": "EV-962-003",
+    "type": "theory_proposed",
+    "date": "962-04-15",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-960-004",
+    "depth": 0,
+    "details": {
+      "theory_name": "normalization_by_evaluation",
+      "claim": "Normalization can be computed by evaluating in a semantic domain, then reading back",
+      "technique": "Interpret terms in a domain, then quote the denotation back to syntax",
+      "advantage": "More efficient than repeated beta-reduction",
+      "connection_to_mott": "Uses domain semantics for a syntactic purpose"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl proposes normalization by evaluation (NbE). Instead of reducing step by step, interpret the term semantically, then 'quote' back to syntax. This connects Mott's semantics to Brennis's syntax."
+  },
+  {
+    "event_id": "EV-965-002",
+    "type": "manuscript_written",
+    "date": "965-11-01",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-962-003",
+    "depth": 0,
+    "details": {
+      "title": "Normalization by Evaluation: A Semantic Approach",
+      "pages": 178,
+      "chapters": 10,
+      "key_claim": "Semantic methods can compute syntactic normal forms",
+      "connection_to_tradition": "Unifies Mott's semantics with Brennis's syntax through Linn's types",
+      "archive_catalog": "THL-003"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl's third manuscript. Shows how to normalize by evaluating in a domain model and reading back. This unifies the semantic tradition (Mott) with the syntactic tradition (Brennis) via dependent types (Linn)."
+  },
+  {
+    "event_id": "EV-968-005",
+    "type": "discovery",
+    "date": "968-06-20",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-965-002",
+    "depth": 0,
+    "details": {
+      "discovery_type": "termination_and_recursion",
+      "observation": "General recursion breaks normalization; only structural recursion is safe",
+      "structural_recursion": "Recursive calls on structurally smaller arguments",
+      "syntactic_check": "Termination checker verifies structural decrease",
+      "connection_to_brennis": "Generalizes Brennis's primitive recursion"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl formalizes the termination checker. General recursion must be rejected (it can encode Omega). Structural recursion — where recursive calls receive smaller arguments — is provably terminating."
+  },
+  {
+    "event_id": "EV-970-003",
+    "type": "manuscript_written",
+    "date": "970-08-01",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-968-005",
+    "depth": 0,
+    "details": {
+      "title": "The Normalization Discipline: A Final Synthesis",
+      "pages": 445,
+      "chapters": 26,
+      "contents": [
+        "Strong normalization",
+        "Confluence",
+        "Reduction strategies",
+        "Reducibility candidates",
+        "Positivity and universes",
+        "Consistency",
+        "Normalization by evaluation",
+        "Termination checking",
+        "Philosophical reflections"
+      ],
+      "dedication": "To Brennis, who proved types terminate; to Linn, who enriched them; and to those who come after, who will understand what normalization means",
+      "archive_catalog": "THL-004"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl's magnum opus and final synthesis. Covers the complete theory of normalization for dependent types. The dedication spans the tradition: Brennis's types, Linn's extensions, and the hint that Keth's work on identity will change everything."
+  },
+  {
+    "event_id": "EV-973-002",
+    "type": "personnel_change",
+    "date": "973-12-31",
+    "location": "capital_archives",
+    "actors": ["varen_tholl"],
+    "parent": "EV-970-003",
+    "depth": 0,
+    "details": {
+      "change_type": "retirement",
+      "from_position": "director_of_proof_theory",
+      "years_of_service": 53,
+      "reason": "age_and_declining_health",
+      "final_lecture": "On What Normalization Proves"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl retires at age 78 after 53 years at the Archives (matching Linn's tenure). His final lecture argues that normalization proves not just termination, but the meaningfulness of the type system as a logic."
+  },
+  {
+    "event_id": "EV-978-003",
+    "type": "death",
+    "date": "978-05-15",
+    "location": "capital",
+    "actors": ["varen_tholl"],
+    "parent": "EV-973-002",
+    "depth": 0,
+    "details": {
+      "death_type": "natural",
+      "age": 83,
+      "cause": "age",
+      "legacy": "founder_of_normalization_theory_for_dependent_types",
+      "epitaph": "He proved passages reach their end"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Varen Tholl dies at 83. His epitaph — 'He proved passages reach their end' — captures his life's work. Where Brennis proved simple types terminate, Tholl proved Linn's dependent types do too."
+  },
+  {
+    "event_id": "EV-979-002",
+    "type": "archive_accession",
+    "date": "979-08-01",
+    "location": "capital_archives",
+    "actors": ["archive_committee"],
+    "parent": "EV-978-003",
+    "depth": 0,
+    "details": {
+      "collection": "varen_tholl_papers",
+      "items": 489,
+      "includes": ["manuscripts", "working_notes", "reduction_traces", "correspondence_with_dora_keth"],
+      "catalog_prefix": "THL",
+      "special_collection": "normalization_archive"
+    },
+    "triggers_cascade": true,
+    "source": {
+      "type": "course",
+      "reference": "types-series/06-normalization"
+    },
+    "confidence": 1.0,
+    "notes": "Tholl's papers are accessioned to the Archive under prefix THL. Together with MND (Mund), MOT (Mott), and LIN (Linn), they form the complete type-theoretic tradition — syntax, semantics, dependent types, and normalization."
+  }
+]
