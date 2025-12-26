@@ -2,6 +2,8 @@
 
 *Strong Normalization and Logical Consistency through Varen Tholl's Normalization Discipline*
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/buildLittleWorlds/types-normalization/blob/main/notebooks/01-why-normalization-matters.ipynb)
+
 > "He proved passages reach their end" — Varen Tholl's epitaph
 
 ## Course Overview
